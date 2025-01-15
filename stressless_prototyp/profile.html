@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>StressLess App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+
+<div id="profile" class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-4">
+    <div class="p-4 bg-green-50">
+      <div class="text-green-600 text-xl font-bold">Profile Settings</div>
+    </div>
+    <div class="p-4">
+      <div class="flex items-center mb-4">
+        <img
+          id="profile-pic"
+          alt="User profile picture"
+          class="rounded-full w-12 h-12"
+          src="https://placehold.co/50x50"
+        />
+        <div class="ml-4">
+          <h2 id="profile-name" class="text-lg font-bold">Sarah Johnson</h2>
+          <p class="text-sm text-gray-600">sarah.j@email.com</p>
+        </div>
+        <i
+          id="edit-icon"
+          class="fas fa-edit text-green-600 text-xl ml-auto cursor-pointer"
+          onclick="toggleEditForm()"
+        ></i>
+      </div>
+  
+      <!-- Edit Form -->
+      <div id="edit-form" class="hidden bg-white p-4 rounded-lg mb-4 shadow-sm">
+        <h2 class="text-lg font-bold mb-4">Edit Profile</h2>
+        <label class="block text-sm font-bold mb-2">Name</label>
+        <input
+          id="name-input"
+          type="text"
+          class="w-full p-2 border rounded-lg mb-4"
+          placeholder="Enter your name"
+          value="Sarah Johnson"
+        />
+        <label class="block text-sm font-bold mb-2">Profile Picture</label>
+        <input
+          id="profile-pic-input"
+          type="file"
+          class="w-full p-2 border rounded-lg mb-4"
+          accept="image/*"
+        />
+        <div class="flex justify-end">
+          <button
+            class="bg-green-600 text-white px-4 py-2 rounded-lg"
+            onclick="saveProfile()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg mb-4 shadow-sm">
+        <h2 class="text-lg font-bold">Weekly Stress Levels</h2>
+        <div class="mt-4">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col items-center">
+              <div class="bg-green-200 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Mon</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-300 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Tue</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-400 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Wed</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-500 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Thu</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-400 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Fri</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-300 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Sat</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="bg-green-200 h-10 w-6 rounded-t-lg"></div>
+              <span class="text-xs text-gray-500 mt-2">Sun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center justify-between">
+        <span class="text-lg font-bold">Notifications</span>
+        <label class="switch">
+          <input checked="" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center justify-between">
+        <span class="text-lg font-bold">Privacy Settings</span>
+        <i class="fas fa-chevron-right text-gray-400"></i>
+      </div>
+      <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center justify-between">
+        <span class="text-lg font-bold">Account Settings</span>
+        <i class="fas fa-chevron-right text-gray-400"></i>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-sm flex items-center justify-between">
+        <span class="text-lg font-bold">Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <div class="flex justify-around bg-white p-4 border-t">
+        <a href="index.html" class="text-green-600">
+          <i class="fas fa-home text-2xl"></i>
+        </a>
+        <a href="mindfulness.html">
+          <i class="fas fa-spa text-gray-400 text-2xl"></i>
+        </a>
+        <a href="games.html">
+          <i class="fas fa-gamepad text-gray-400 text-2xl"></i>
+        </a>
+        <a href="tips.html">
+          <i class="fas fa-lightbulb text-gray-400 text-2xl"></i>
+        </a>
+      </div>
+  </div>
+  
+  <script>
+    function toggleEditForm() {
+      const editForm = document.getElementById('edit-form');
+      editForm.classList.toggle('hidden');
+    }
+  
+    function saveProfile() {
+      const newName = document.getElementById('name-input').value;
+      const newPicInput = document.getElementById('profile-pic-input');
+      const profileName = document.getElementById('profile-name');
+      const profilePic = document.getElementById('profile-pic');
+  
+      if (newName) {
+        profileName.textContent = newName;
+      }
+      if (newPicInput.files && newPicInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profilePic.src = e.target.result;
+        };
+        reader.readAsDataURL(newPicInput.files[0]);
+      }
+      toggleEditForm();
+    }
+  </script>
+ </body>
+</html>

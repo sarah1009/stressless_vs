@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>StressLess App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+  
+<body class="bg-gray-100">
+  <!-- Frame 1 -->
+  <div id="home" class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-4">
+    <div class="p-4 bg-green-50">
+      <div class="flex justify-between items-center">
+        <div class="text-green-600 text-xl font-bold">
+          StressLess
+        </div>
+        <a href="profile.html">
+          <img alt="User profile picture" class="rounded-full w-10 h-10 cursor-pointer" src="https://placehold.co/40x40"/>
+        </a>
+      </div>
+      <div class="mt-4">
+        <h1 class="text-2xl font-bold text-center">Welcome to StressLess!</h1>
+        <p class="text-center text-green-600 mt-2">How are you feeling today?</p>
+        <div class="mt-4">
+          <input class="w-full" max="10" min="1" type="range" value="1"/>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>Low Stress</span>
+            <span>High Stress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-4">
+      <a href="mindfulness.html" class="block bg-green-50 p-4 rounded-lg mb-4 hover:bg-green-100 active:bg-green-200">
+        <div class="flex items-center">
+          <i class="fas fa-spa text-green-600 text-2xl"></i>
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Mindfulness Exercises</h2>
+            <p class="text-sm text-gray-600">Guided meditation and breathing exercises to help you find inner peace.</p>
+          </div>
+        </div>
+      </a>
+      <a href="games.html" class="block bg-green-50 p-4 rounded-lg mb-4 hover:bg-green-100 active:bg-green-200">
+        <div class="flex items-center">
+          <i class="fas fa-gamepad text-green-600 text-2xl"></i>
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Games</h2>
+            <p class="text-sm text-gray-600">Engaging activities designed to distract and calm your mind.</p>
+          </div>
+        </div>
+      </a>
+      <a href="tips.html" class="block bg-green-50 p-4 rounded-lg hover:bg-green-100 active:bg-green-200">
+        <div class="flex items-center">
+          <i class="fas fa-lightbulb text-green-600 text-2xl"></i>
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Tips</h2>
+            <p class="text-sm text-gray-600">Daily advice and strategies for managing stress effectively.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="flex justify-around bg-white p-4 border-t">
+      <a href="index.html" class="text-green-600">
+        <i class="fas fa-home text-2xl"></i>
+      </a>
+      <a href="mindfulness.html">
+        <i class="fas fa-spa text-gray-400 text-2xl"></i>
+      </a>
+      <a href="games.html">
+        <i class="fas fa-gamepad text-gray-400 text-2xl"></i>
+      </a>
+      <a href="tips.html">
+        <i class="fas fa-lightbulb text-gray-400 text-2xl"></i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

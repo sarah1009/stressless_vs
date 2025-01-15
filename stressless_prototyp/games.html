@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>StressLess App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+
+<!-- Frame 3 -->
+<div id="games" class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden my-4">
+    <div class="p-4 bg-green-50">
+        <div class="flex justify-between items-center">
+     <div class="text-green-600 text-xl font-bold">
+      Games
+     </div>
+     <a href="profile.html">
+        <img alt="User profile picture" class="rounded-full w-10 h-10 cursor-pointer" src="https://placehold.co/40x40"/>
+      </a>
+    </div>
+    <div class="p-4">
+    <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center">
+     <img alt="Breathing Bubble" class="w-12 h-12 rounded-full" src="https://placehold.co/50x50"/>
+     <div class="ml-4 flex-1">
+      <h2 class="text-lg font-bold">
+       Breathing Bubble
+      </h2>
+      <p class="text-sm text-gray-600">
+       Follow the expanding bubble to practice deep breathing exercises
+      </p>
+     </div>
+     <button class="bg-green-600 text-white px-4 py-2 rounded-lg" onclick="showGameInfo('Breathing Bubble')">
+      Start
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center">
+     <img alt="Color Flow" class="w-12 h-12 rounded-full" src="https://placehold.co/50x50"/>
+     <div class="ml-4 flex-1">
+      <h2 class="text-lg font-bold">
+       Color Flow
+      </h2>
+      <p class="text-sm text-gray-600">
+       Create peaceful patterns by mixing flowing colors together
+      </p>
+     </div>
+     <button class="bg-green-600 text-white px-4 py-2 rounded-lg" onclick="showGameInfo('Color Flow')">
+      Start
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center">
+     <img alt="Zen Garden" class="w-12 h-12 rounded-full" src="https://placehold.co/50x50"/>
+     <div class="ml-4 flex-1">
+      <h2 class="text-lg font-bold">
+       Zen Garden
+      </h2>
+      <p class="text-sm text-gray-600">
+       Design your own peaceful zen garden with sand patterns
+      </p>
+     </div>
+     <button class="bg-green-600 text-white px-4 py-2 rounded-lg" onclick="showGameInfo('Zen Garden')">
+      Start
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded-lg mb-4 shadow-sm flex items-center">
+     <img alt="Sound Puzzle" class="w-12 h-12 rounded-full" src="https://placehold.co/50x50"/>
+     <div class="ml-4 flex-1">
+      <h2 class="text-lg font-bold">
+       Sound Puzzle
+      </h2>
+      <p class="text-sm text-gray-600">
+       Create relaxing melodies by arranging sound patterns
+      </p>
+     </div>
+     <button class="bg-green-600 text-white px-4 py-2 rounded-lg" onclick="showGameInfo('Sound Puzzle')">
+      Start
+     </button>
+    </div>
+</div>
+</div>
+<div class="flex justify-around bg-white p-4 border-t">
+    <a href="index.html">
+      <i class="fas fa-home text-gray-400 text-2xl"></i>
+    </a>
+    <a href="mindfulness.html">
+      <i class="fas fa-spa text-gray-400 text-2xl"></i>
+    </a>
+    <a href="games.html" class="text-green-600">
+      <i class="fas fa-gamepad text-2xl"></i>
+    </a>
+    <a href="tips.html">
+      <i class="fas fa-lightbulb text-gray-400 text-2xl"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Game Info Modal -->
+<div id="gameInfoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm">
+    <h2 id="gameTitle" class="text-lg font-bold text-center mb-4"></h2>
+    <p class="text-gray-600 text-center mb-6">Hier bekommt der Nutzer eine Beschreibung zum Spiel und kann dann auswählen ob dieser das Spiel spielen möchte oder zurück gehen möchte.</p>
+    <div class="flex justify-between">
+      <button onclick="closeGameInfo()" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg">Zurück</button>
+      <button onclick="startGame()" class="bg-green-600 text-white px-4 py-2 rounded-lg">Spielen</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showGameInfo(gameName) {
+  document.getElementById('gameTitle').innerText = gameName;
+  document.getElementById('gameInfoModal').classList.remove('hidden');
+}
+
+function closeGameInfo() {
+  document.getElementById('gameInfoModal').classList.add('hidden');
+}
+
+function startGame() {
+  alert('Spiel wird gestartet!'); // Hier kann die Logik zum Starten des Spiels hinzugefügt werden.
+  closeGameInfo();
+}
+</script>
